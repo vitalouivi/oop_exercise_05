@@ -96,7 +96,7 @@ namespace containers {
     template<class T>
     T& queue<T>::top() {
         if (size == 0) {
-            throw std::logic_error ("queue is empty, lol, it has no top");
+            throw std::logic_error ("queue is empty, it has no top");
         }
         return first->value;
     }
@@ -200,10 +200,5 @@ namespace containers {
     bool queue<T>::forward_iterator::operator!=(const forward_iterator& other) const {
         return it_ptr != other.it_ptr;
     }
-
-
 }
-
-
-
 #endif //OOP_EXERCISE_05_QUEUE_H
