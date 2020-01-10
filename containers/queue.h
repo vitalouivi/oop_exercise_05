@@ -118,6 +118,10 @@ namespace containers {
         while((i.it_ptr != nullptr) && (i.it_ptr->next() != d_it)) {
            ++i;
         }
+       /* for (i = this->begin(); i == delete_by_it || i == this->end(); i++)
+        {
+        }*/
+
         if (i.it_ptr == nullptr) throw std::logic_error ("out of borders");
         i.it_ptr->next_element = std::move(d_it.it_ptr->next_element);
         size--;
@@ -126,7 +130,7 @@ namespace containers {
     template<class T>
     void queue<T>::delete_by_number(size_t N) {
         forward_iterator it = this->begin();
-        for (size_t i = 1; i <= N; ++i) {
+        for (size_t i = 0; i < N + 1; ++i) {
             if (i == N) break;
             ++it;
         }
