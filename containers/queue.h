@@ -159,7 +159,7 @@ namespace containers {
     template<class T>
     void queue<T>::insert_by_number(size_t N, T& value) {
         forward_iterator it = this->begin();
-        for (size_t i = 1; i <= N; ++i) {
+        for (size_t i = 0; i < N + 1; ++i) {
             if (i == N) break;
             ++it;
         }
